@@ -1,25 +1,21 @@
-
 <script setup lang="ts">
-import type { Ref } from 'vue'
-import type { EventItem } from '@/type';
-import { ref, type PropType } from 'vue';
-import EventService from '@/services/EventService';
-
+import type { Ref } from "vue";
+import type { EventItem } from "@/type";
+import { ref, type PropType } from "vue";
+import EventService from "@/services/EventService";
 
 defineProps({
   event: {
     type: Object as PropType<EventItem>,
-    require: true
-  }
-})
-
+    require: true,
+  },
+});
 
 // EventService.getEventById(Number(props.id)).then((response) => {
 //     event.value = response.data
 // }).catch(error => {
 //     console.log(error)
 // })
-
 </script>
 
 <template>
@@ -37,5 +33,3 @@ defineProps({
     <span>{{ event }}</span>
   </div>
 </template>
-
-

@@ -1,36 +1,38 @@
 <script setup lang="ts">
-import type { OrganizerItem } from '@/type'
-import { ref } from 'vue'
-import OrganizerService from '@/services/OrganizerService'
-import { useRouter } from 'vue-router'
-import { useMessageStore } from '@/stores/message'
+import type { OrganizerItem } from "@/type";
+import { ref } from "vue";
+import OrganizerService from "@/services/OrganizerService";
+import { useRouter } from "vue-router";
+import { useMessageStore } from "@/stores/message";
 
-const store = useMessageStore()
+const store = useMessageStore();
 
-const router = useRouter()
+const router = useRouter();
 
 function saveOrganizer() {
   OrganizerService.saveOrganizer(organizer.value)
     .then((response) => {
-      console.log(response.data)
+      console.log(response.data);
       router.push({
-        name: 'organizer-detail',
-        params: { id: response.data.id }
-      })
-      store.updateMessage('You successfully added a new organizer.' + response.data.title)
+        name: "organizer-detail",
+        params: { id: response.data.id },
+      });
+      store.updateMessage(
+        "You successfully added a new organizer." + response.data.title
+      );
       setTimeout(() => {
-        store.resetMessage()
-      }, 3000)
+        store.resetMessage();
+      }, 3000);
     })
     .catch(() => {
-      router.push({ name: 'network-error' })
-    })
+      router.push({ name: "network-error" });
+    });
 }
 const organizer = ref<OrganizerItem>({
   id: 0,
-  organizerName: '',
-  address: ''
-})
+  organizerName: "",
+  address: "",
+});
 </script>
 
 <template>
@@ -46,7 +48,12 @@ const organizer = ref<OrganizerItem>({
       />
 
       <label>address</label>
-      <input v-model="organizer.address" type="text" placeholder="address" class="field" />
+      <input
+        v-model="organizer.address"
+        type="text"
+        placeholder="address"
+        class="field"
+      />
 
       <button type="submit">Submit</button>
     </form>
@@ -89,7 +96,7 @@ optgroup,
 select,
 textarea {
   display: inline-flex;
-  font-family: 'Open sans', sans-serif;
+  font-family: "Open sans", sans-serif;
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
@@ -103,22 +110,22 @@ select {
   text-transform: none;
 }
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: none;
 }
 button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 button:-moz-focusring,
-[type='button']:-moz-focusring,
-[type='reset']:-moz-focusring,
-[type='submit']:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 2px solid #39b982;
 }
 label {
@@ -142,38 +149,38 @@ textarea {
   overflow: auto;
   font-size: 20px;
 }
-[type='checkbox'],
-[type='radio'] {
+[type="checkbox"],
+[type="radio"] {
   box-sizing: border-box;
   padding: 0;
   margin-right: 0.5rem;
 }
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
-[type='search'] {
+[type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
-[type='search']::-webkit-search-decoration {
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 input,
-[type='text'],
-[type='number'],
-[type='search'],
-[type='password'] {
+[type="text"],
+[type="number"],
+[type="search"],
+[type="password"] {
   height: 52px;
   width: 100%;
   padding: 0 10px;
   font-size: 20px;
 }
 input,
-[type='text']:focus,
-[type='number']:focus,
-[type='search']:focus,
-[type='password']:focus {
+[type="text"]:focus,
+[type="number"]:focus,
+[type="search"]:focus,
+[type="password"]:focus {
   border-color: #39b982;
 }
 ::-webkit-file-upload-button {

@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
-import type { StudentItem } from '@/type';
+import { defineProps } from "vue";
+import type { StudentItem } from "@/type";
 
 const props = defineProps({
   student: {
     type: Object as PropType<StudentItem>,
     required: true,
-  }
+  },
 });
 </script>
 

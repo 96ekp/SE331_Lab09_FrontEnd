@@ -6,14 +6,14 @@
 </template>
 
 <script setup lang="ts">
-import type { OrganizerItem } from '@/type'
-import type { PropType } from 'vue'
+import type { OrganizerItem } from "@/type";
+import type { PropType } from "vue";
 const props = defineProps({
   event: {
     type: Object as PropType<OrganizerItem>,
-    require: true
-  }
-})
+    require: true,
+  },
+});
 </script>
 <style scoped>
 .event-list {

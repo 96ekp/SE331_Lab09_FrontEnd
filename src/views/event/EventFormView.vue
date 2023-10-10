@@ -1,57 +1,60 @@
 <script setup lang="ts">
-import type { EventItem, EventOrganizer } from '@/type'
-import { ref } from 'vue'
-import EventService from '@/services/EventService';
-import { useRouter } from 'vue-router'
-import { useMessageStore } from '@/stores/message'
-import BaseInput from '@/components/BaseInput.vue';
-import OrganizerService from '@/services/OrganizerService';
-import BaseSelect from '@/components/BaseSelect.vue';
+import type { EventItem, EventOrganizer } from "@/type";
+import { ref } from "vue";
+import EventService from "@/services/EventService";
+import { useRouter } from "vue-router";
+import { useMessageStore } from "@/stores/message";
 
-const store = useMessageStore()
+import BaseInput from "@/components/BaseInput.vue";
+import OrganizerService from "@/services/OrganizerService";
+import BaseSelect from "@/components/BaseSelect.vue";
 
-const router = useRouter()
 
-const organizers = ref<EventOrganizer[]>([])
+const store = useMessageStore();
+
+const router = useRouter();
+
+const organizers = ref<EventOrganizer[]>([]);
 OrganizerService.getOrganizers()
-    .then((response) => {
-      organizers.value = response.data
-    })
-    .catch(() => {
-      router.push({ name: 'network-error' })
-    })
-
+  .then((response) => {
+    organizers.value = response.data;
+  })
+  .catch(() => {
+    router.push({ name: "network-error" });
+  });
 
 function saveEvent() {
   EventService.saveEvent(event.value)
-      .then((response) => {
-        console.log(response.data)
-        router.push({
-          name: 'event-detail',
-          params: { id: response.data.id }
-        })
-        store.updateMessage('You have successfully added a new event for ' + response.data.title)
-        setTimeout(() => {
-          store.resetMessage()
-        }, 3000)
-      }).catch(() => {
-    router.push({ name: 'network-error' })
-  })
+    .then((response) => {
+      console.log(response.data);
+      router.push({
+        name: "event-detail",
+        params: { id: response.data.id },
+      });
+      store.updateMessage(
+        "You have successfully added a new event for " + response.data.title
+      );
+      setTimeout(() => {
+        store.resetMessage();
+      }, 3000);
+    })
+    .catch(() => {
+      router.push({ name: "network-error" });
+    });
 }
 
 const event = ref<EventItem>({
   id: 0,
-  category: '',
-  title: '',
-  description: '',
-  location: '',
-  date: '',
-  time: '',
-  organizer: { id: 0, name: '' }
+  category: "",
+  title: "",
+  description: "",
+  location: "",
+  date: "",
+  time: "",
+  organizer: { id: 0, name: "" },
   // organizer: EventOrganizer = {id: 0, name: ''}
-})
+});
 </script>
-
 
 <template>
   <div>
@@ -71,7 +74,11 @@ const event = ref<EventItem>({
 
       <h3>Who is your organizer?</h3>
       <label>Select an Organizer</label>
-      <BaseSelect v-model="event.organizer.id" label="Organizer" :options="organizers" />
+      <BaseSelect
+        v-model="event.organizer.id"
+        label="Organizer"
+        :options="organizers"
+      />
       <button type="submit">Submit</button>
     </form>
 
