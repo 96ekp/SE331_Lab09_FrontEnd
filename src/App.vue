@@ -1,49 +1,27 @@
-<template>
-  <div id="app">
-    <header class="max-h-screen leading-normal">
-      <h1 class="text-1.5xl">Create by Saw Eh Kalane Phaung</h1>
-      <div id="flashMessage" v-if="message" class="animate-yellowfade">
-        <h4 class="text-lg">{{ message }}</h4>
-      </div>
-      <nav class="p-8">
-        <!-- <RouterLink to="/">Home</RouterLink> | <RouterLink to="/about">About</RouterLink>|
-      <RouterLink to="/categories">Categories</RouterLink>|
-      <router-link to="/students">Students</router-link> -->
+<script setup lang="ts">
+import { RouterLink, RouterView } from 'vue-router'
+import { useMessageStore } from './stores/message';
+import { storeToRefs } from 'pinia';
 
-        <RouterLink
-          :to="{ name: 'event-list' }"
-          class="font-bold text-gray-700 hover:text-green-500"
-          >Home</RouterLink
-        >
-        |
-        <RouterLink :to="{ name: 'about' }" class="font-bold text-gray-700 hover:text-green-500"
-          >About</RouterLink
-        >
-        <!--        |-->
-        <!--        <RouterLink-->
-        <!--          :to="{ name: 'categories' }"-->
-        <!--          class="font-bold text-gray-700 hover:text-green-500"-->
-        <!--          >Categories</RouterLink-->
-        <!--        >-->
-        <!--        |-->
-        <!--        <RouterLink :to="{ name: 'students' }" class="font-bold text-gray-700 hover:text-green-500"-->
-        <!--          >Students</RouterLink-->
-        <!--        >-->
-        |
-        <RouterLink :to="{ name: 'add-event' }" class="font-bold text-gray-700 hover:text-green-500"
-          >New Event
-        </RouterLink>
-        |
-        <RouterLink
-          :to="{ name: 'add-organizer' }"
-          class="font-bold text-gray-700 hover:text-green-500"
-          >New Organizer
-        </RouterLink>
-      </nav>
-    </header>
-    <RouterView />
-  </div>
+const store = useMessageStore()
+const { message } = storeToRefs(store)
+
+</script>
+
+<template>
+  <header>
+    <div id="flashMessage" v-if="message">
+      <h4>{{ message }}</h4>
+    </div>
+    <nav>
+      <RouterLink :to="{ name: 'event-list' }">Home</RouterLink>
+      <RouterLink :to="{ name: 'about' }">About</RouterLink>
+      <router-link :to="{ name: 'add-event' }">New Event</router-link>
+    </nav>
+  </header>
+  <RouterView />
 </template>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -52,16 +30,34 @@
   text-align: center;
   color: #2c3e50;
 }
-/* Add your styles here */
-.page-size-selection {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+
+nav {
+  padding: 30px;
 }
 
-label {
-  margin-right: 5px;
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
 }
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+header {
+  line-height: 1.5;
+  max-height: 100vh;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+h4 {
+  font-size: 20px;
+}
+
 @keyframes yellowfade {
   from {
     background: yellow;
@@ -72,17 +68,32 @@ label {
   }
 }
 
-.animate-yellowfade {
+#flashMessage {
   animation: yellowfade 3s ease-in-out;
 }
-</style>
-<script setup lang="ts">
-import { storeToRefs } from 'pinia'
-import { ref } from 'vue'
-import { RouterLink, RouterView } from 'vue-router'
-import { useMessageStore } from './stores/message'
 
-const store = useMessageStore()
-const { message } = storeToRefs(store)
-const sizes = ref<number>(2)
-</script>
+.events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pagination {
+  display: flex;
+  width: 290px;
+}
+
+.pagination a {
+  flex: 1;
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+#page-prev {
+  text-align: left;
+}
+
+#page-next {
+  text-align: right;
+}
+</style>

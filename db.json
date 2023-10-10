@@ -67,181 +67,70 @@
       "organizer": "Brody Kill"
     },
     {
-      "id": 1004,
-      "category": "jdlasjfl;jasd",
-      "title": "afsdfs",
-      "description": "asdfsa",
-      "location": "afsdfs",
-      "date": "",
-      "time": "",
-      "organizer": ""
+      "id": 123,
+      "category": "animal welfare",
+      "title": "Cat Adoption Day",
+      "description": "Find your new feline friend at this event.",
+      "location": "Meow Town",
+      "date": "January 28, 2022",
+      "time": "12:00",
+      "petsAllowed": true,
+      "organizer": "Kat Laydee"
     },
     {
-      "id": 1005,
-      "category": "adsfas",
-      "title": "asdfasd",
-      "description": "asdfas",
-      "location": "asdfasd",
-      "date": "",
-      "time": "",
-      "organizer": ""
+      "id": 456,
+      "category": "food",
+      "title": "Community Gardening",
+      "description": "Join us as we tend to the community edible plants.",
+      "location": "Flora City",
+      "date": "March 14, 2022",
+      "time": "10:00",
+      "petsAllowed": true,
+      "organizer": "Fern Pollin"
     },
     {
-      "id": 1006,
-      "category": "dfasd",
-      "title": "asdfsad",
-      "description": "dasfsa",
-      "location": "fasdfa",
-      "date": "",
-      "time": "",
-      "organizer": ""
+      "id": 789,
+      "category": "sustainability",
+      "title": "Beach Cleanup",
+      "description": "Help pick up trash along the shore.",
+      "location": "Playa Del Carmen",
+      "date": "July 22, 2022",
+      "time": "11:00",
+      "petsAllowed": false,
+      "organizer": "Carey Wales"
     },
     {
-      "id": 1007,
-      "category": "category",
-      "title": "title",
-      "description": "description",
-      "location": "location",
-      "date": "",
-      "time": "",
-      "organizer": ""
+      "id": 1001,
+      "category": "animal welfare",
+      "title": "Dog Adoption Day",
+      "description": "Find your new canine friend at this event.",
+      "location": "Woof Town",
+      "date": "August 28, 2022",
+      "time": "12:00",
+      "petsAllowed": true,
+      "organizer": "Dawg Dahd"
     },
     {
-      "id": 1008,
-      "category": "dfasdfs",
-      "title": "asdfas",
-      "description": "asdf",
-      "location": "dafsda",
-      "date": "",
-      "time": "",
-      "organizer": ""
+      "id": 1002,
+      "category": "food",
+      "title": "Canned Food Drive",
+      "description": "Bring your canned food to donate to those in need.",
+      "location": "Tin City",
+      "date": "September 14, 2022",
+      "time": "3:00",
+      "petsAllowed": true,
+      "organizer": "Kahn Opiner"
     },
     {
-      "id": 1009,
-      "category": "sdafas",
-      "title": "asdfasd",
-      "description": "asdfsa",
-      "location": "asdfsad",
-      "date": "",
-      "time": "",
-      "organizer": ""
-    },
-    {
-      "id": 1010,
-      "category": "dsfasd",
-      "title": "sdfas",
-      "description": "dfasda",
-      "location": "afsdfa",
-      "date": "",
-      "time": "",
-      "organizer": ""
-    },
-    {
-      "id": 1011,
-      "category": "dsfasd",
-      "title": "asdfsa",
-      "description": "asdfsad",
-      "location": "asdfa",
-      "date": "",
-      "time": "",
-      "organizer": ""
-    },
-    {
-      "id": 1012,
-      "category": "sdfaSd",
-      "title": "sada",
-      "description": "daSD",
-      "location": "asda",
-      "date": "",
-      "time": "",
-      "organizer": ""
-    },
-    {
-      "id": 1013,
-      "category": "dfadf",
-      "title": "asdfasd",
-      "description": "asdfasd",
-      "location": "asdfa",
-      "date": "",
-      "time": "",
-      "organizer": ""
-    }
-  ],
-  "organizers": [
-    {
-      "id": 1,
-      "organizerName": "John Smith",
-      "address": "123 Main St, Anytown, USA"
-    },
-    {
-      "id": 2,
-      "organizerName": "Jane Doe",
-      "address": "456 Elm St, Another Town, USA"
-    },
-    {
-      "id": 3,
-      "organizerName": "David Johnson",
-      "address": "789 Oak St, Some City, USA"
-    },
-    {
-      "id": 4,
-      "organizerName": "Emily Wilson",
-      "address": "101 Pine St, Different City, USA"
-    },
-    {
-      "id": 5,
-      "organizerName": "Michael Brown",
-      "address": "222 Cedar St, New Town, USA"
-    },
-    {
-      "id": 6,
-      "organizerName": "Sophia Lee",
-      "address": "333 Birch St, Old Town, USA"
-    },
-    {
-      "id": 7,
-      "organizerName": "Daniel Taylor",
-      "address": "444 Maple St, Smallville, USA"
-    },
-    {
-      "id": 8,
-      "organizerName": "Olivia Martinez",
-      "address": "555 Redwood St, Big City, USA"
-    },
-    {
-      "id": 9,
-      "organizerName": "William Anderson",
-      "address": "666 Spruce St, Metro City, USA"
-    },
-    {
-      "id": 10,
-      "organizerName": "Ava Rodriguez",
-      "address": "777 Juniper St, Coastal Town, USA"
-    },
-    {
-      "id": 11,
-      "organizerName": "csdcZ",
-      "address": "sadfasd"
-    },
-    {
-      "id": 12,
-      "organizerName": "My joh",
-      "address": "Chiang Mai"
-    },
-    {
-      "id": 13,
-      "organizerName": "fasd",
-      "address": "asdfsa"
-    },
-    {
-      "id": 14,
-      "organizerName": "sadas",
-      "address": "aSDA"
-    },
-    {
-      "id": 15,
-      "organizerName": "dsfasd",
-      "address": "asdfsa"
+      "id": 1003,
+      "category": "sustainability",
+      "title": "Highway Cleanup",
+      "description": "Help pick up trash along the highway.",
+      "location": "Highway 50",
+      "date": "July 22, 2022",
+      "time": "11:00",
+      "petsAllowed": false,
+      "organizer": "Brody Kill"
     }
   ]
 }

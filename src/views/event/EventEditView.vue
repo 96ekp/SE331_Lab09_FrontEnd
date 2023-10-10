@@ -1,10 +1,12 @@
-<!-- views/event/EventEditView.vue -->
-
 <script setup lang="ts">
-import { type EventItem } from '@/type'
-import { type PropType } from 'vue'
-import { useRouter } from 'vue-router'
-import { useMessageStore } from '@/stores/message'
+import type { Ref } from 'vue'
+import type { EventItem } from '@/type';
+import { ref, type PropType } from 'vue';
+import EventService from '@/services/EventService';
+import { useRouter } from 'vue-router';
+import { useMessageStore } from '@/stores/message';
+
+const event = ref<EventItem | null>(null)
 
 const props = defineProps({
   event: {
@@ -17,10 +19,12 @@ const router = useRouter()
 const store = useMessageStore()
 
 function edit() {
-  store.updateMessage(' You are Edit succesfully for' + props.event?.title)
+
+  store.updateMessage('You are successfully edited for ' + props.event?.title)
   setTimeout(() => {
     store.resetMessage()
   }, 3000)
+
   router.push({
     name: 'event-detail',
     params: {
@@ -28,16 +32,12 @@ function edit() {
     }
   })
 }
+
 </script>
 
 <template>
-  <div v-if="event" class="p-3 mt-2">
-    <p class="font-bold text-gray-600">Edit Event</p>
-    <button
-      @click="edit"
-      class="bg-black border border-none rounded-full font-bold text-white p-2 mt-2 hover:bg-sky-blue"
-    >
-      Update
-    </button>
-  </div>
+  <p>Edit the event here</p>
+  <button @click="edit">Register Me</button>
 </template>
+
+
