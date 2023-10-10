@@ -1,0 +1,6 @@
+version: '3.9'
+services:
+web:
+  image: 'saw96/se331-lab6:latest'
+  ports:
+    - 8080:80
