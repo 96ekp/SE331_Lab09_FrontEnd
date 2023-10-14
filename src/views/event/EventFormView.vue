@@ -1,13 +1,12 @@
 <script setup lang="ts">
+import EventService from "@/services/EventService";
+import { useMessageStore } from "@/stores/message";
 import type { EventItem, EventOrganizer } from "@/type";
 import { ref } from "vue";
-import EventService from "@/services/EventService";
 import { useRouter } from "vue-router";
-import { useMessageStore } from "@/stores/message";
 
 import BaseInput from "@/components/BaseInput.vue";
 import OrganizerService from "@/services/OrganizerService";
-import BaseSelect from "@/components/BaseSelect.vue";
 
 const store = useMessageStore();
 
@@ -73,11 +72,16 @@ const event = ref<EventItem>({
 
       <h3>Who is your organizer?</h3>
       <label>Select an Organizer</label>
-      <BaseSelect
-        v-model="event.organizer.id"
-        label="Organizer"
-        :options="organizers"
-      />
+      <select v-model="event.organizer.id">
+        <option
+          v-for="option in organizers"
+          :value="option.id"
+          :key="option.id"
+          :selected="option.id === event.organizer.id"
+        >
+          {{ option.name }}
+        </option>
+      </select>
       <button type="submit">Submit</button>
     </form>
 
