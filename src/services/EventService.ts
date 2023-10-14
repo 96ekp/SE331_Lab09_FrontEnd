@@ -1,6 +1,6 @@
-import axios from "axios";
-import type { AxiosInstance, AxiosResponse } from "axios";
 import type { EventItem } from "@/type";
+import type { AxiosInstance, AxiosResponse } from "axios";
+import axios from "axios";
 
 const apiClient: AxiosInstance = axios.create({
   baseURL: "http://localhost:8080",
@@ -16,13 +16,13 @@ export default {
     // perPage is limit
     // page is number of pages
     return apiClient.get<EventItem[]>(
-      "/event?_limit=" + perPage + "&_page=" + page
+      "/events?_limit=" + perPage + "&_page=" + page
     );
   },
   getEventById(id: number): Promise<AxiosResponse<EventItem>> {
-    return apiClient.get<EventItem>("event/" + id.toString());
+    return apiClient.get<EventItem>("events/" + id.toString());
   },
   saveEvent(event: EventItem): Promise<AxiosResponse<EventItem>> {
-    return apiClient.post<EventItem>("/event", event);
+    return apiClient.post<EventItem>("/events", event);
   },
 };

@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { storeToRefs } from "pinia";
 import { RouterLink, RouterView } from "vue-router";
 import { useMessageStore } from "./stores/message";
-import { storeToRefs } from "pinia";
 
 const store = useMessageStore();
 const { message } = storeToRefs(store);
@@ -13,8 +13,8 @@ const { message } = storeToRefs(store);
       <h4>{{ message }}</h4>
     </div>
     <nav>
-      <RouterLink :to="{ name: 'event-list' }">Home</RouterLink>
-      <RouterLink :to="{ name: 'about' }">About</RouterLink>
+      <RouterLink :to="{ name: 'event-list' }">Home</RouterLink> |
+      <RouterLink :to="{ name: 'about' }">About</RouterLink> |
       <router-link :to="{ name: 'add-event' }">New Event</router-link>
     </nav>
   </header>
