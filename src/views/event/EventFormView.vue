@@ -9,7 +9,6 @@ import BaseInput from "@/components/BaseInput.vue";
 import OrganizerService from "@/services/OrganizerService";
 import BaseSelect from "@/components/BaseSelect.vue";
 
-
 const store = useMessageStore();
 
 const router = useRouter();
